@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout-page</title>
+    <link rel="stylesheet" href="/src/styles.scss">
+</head>
+<body class="font-serif bg-[#F5F5F5]">
+        <div class="container mx-auto px-8 py-10">
+                <!-- Free discout applied  -->
+                 <div class="w-full p-3 mb-2 bg-[#FFFEFB] border border-[#E0A800]">
+                        <div class="flex flex-row items-center justify-start space-x-2">
+                                <!-- icon -->
+                                 <div class="">
+                            <img src="/src/assets/images/avatar-male-1.png" alt="">
+                                 </div>
+                                 <h4 class="text-xs text-gray-950 font-bold capitalize">free shipping discount applied</h4>
+                        </div>
+                 </div>
+                 <!-- Delivery part  -->
+                  <div class="p-5 bg-white">
+                        <div class="flex items-center justify-start space-x-2 mb-3">
+                                <div class="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-3 text-[#EF5D40]">
+                                                <path fill-rule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd" />
+                                        </svg>
+                                              
+                                </div>
+                                <h4 class="text-[15px] font-normal text-[#EF5D40] capitalize">delivery address</h4>
+                        </div>
+                        <div class="flex flex-row justify-start items-center space-x-3">
+                <h4 class="text-[13px] text-gray-950 ">
+                        <p class="font-semibold mr-3"><span>{{orders.address.fullName}}</span> <span>{{orders.address.mobileNumber}}</span></p>
+                        <span>{{orders.address.division}}</span>, <span>{{orders.address.area}}</span>, <span>{{orders.address.landMark}}</span>,
+                        <span>{{orders.address.label}}</span>, <span>{{orders.address.city}}</span>, <span>{{orders.address.address}}</span>
+                        Demak Laut Industrial Park, Lot 712, Lorong Demak Laut 2a, 98000, Miri, Kuching, 53000 Sarawak                        
+                </h4>
+                <div class="px-1  border border-[#EF5739] text-[#EF5739] text-[10px]">Default</div>
+                <h4 class="text-blue-600 text-xs font-normal pl-3">Change</h4>
+                        </div>
+                  </div>
+                  <!-- delivery part end  -->
+
+                        <!-- Products ordered part  -->
+                  <div class="my-3">
+                        <div class="grid grid-cols-11 p-5 bg-white ">
+                                <div class="col-span-3 text-left">
+                                        <h4 class="text-[14px] font-normal capitalize text-black" >
+                                        Products Ordered
+                                        </h4>
+                                </div>
+                                <div class="col-span-1 flex items-center justify-end">
+                                        <h4 class="text-gray-400 text-[11px] capitalize">placed Date</h4>
+                                </div>
+                                <div class="col-span-1 flex items-center justify-end">
+                                        <h4 class="text-gray-400 text-[11px] capitalize">Order Id</h4>
+
+                                </div>
+                                <div class="col-span-1 flex items-center justify-end">
+                                        <h4 class="text-gray-400 text-[11px] capitalize">unit price</h4>
+                                </div>
+
+                                <div class="col-span-2 grid grid-cols-2 items-center justify-between">
+                                        <div class="col-span-1 flex items-center justify-center pl-5">
+                                                <h4 class="text-gray-400 text-right text-[11px] capitalize">Status</h4>
+                                        </div>
+
+                                        <div class="col-span-1 flex items-center justify-end">
+                                                <h4 class="text-gray-400 text-right text-[11px] capitalize">items subtotal</h4>
+                                        </div>
+                                </div>
+                                <div class="col-span-2 flex items-center justify-center">
+                                        <h4 class="text-gray-400 text-[11px] capitalize">Order</h4>
+                                </div>
+                                <div class="col-span-1"></div>
+
+                          </div>
+                          <div class="px-5 py-3 text-left bg-[#FCFCFC] flex space-x-5">
+                                <h4 class=" text-gray-500 text-[11px] capitalize">Fulfilled shopee</h4>
+                                
+                                
+                          </div>
+                          <div class="p-5 bg-white ">
+                                
+                                <div class=" flex flex-row items-center justify-start">
+
+                                        <h4 class="text-xs capitalize font-normal text-gray-950"><span class= " bg-[#EE4D2D] px-0.5 rounded-sm text-white">prefered+</span> shopee choice global</h4>
+                                        <div class="px-1 text-gray-400">|</div>
+                
+                                        <h4 class="text-[12px] font-medium ml-2 text-[#46c0b0]">chat now</h4>
+                                </div>
+                                
+                          </div>
+
+                          @if(orders) {
+                          <!-- main product items part start  -->
+
+                                <div class="bg-white pb-5">
+                @for (order of orders.orderedItems; track order.id) {
+                        <!-- order item part with id  -->
+                        <div class="bg-white pl-5 pb-3">
+                                <h4 class=" text-gray-800 text-[14px] capitalize">Order Id : {{orders.id}}</h4>
+                        </div>
+                        <!-- order item part with id  -->
+
+                        <!-- items  -->
+                        <div class="grid grid-cols-11 px-5 pb-5 bg-white">
+                                <div class="col-span-2  flex flex-row items-center justify-start">
+                                        <div class="w-full flex flex-row items-center justify-start">
+                                                <div class="h-9 w-9 border mr-3">
+                                                        <img [src]="orders.images" alt="">
+                                                </div>
+                                                <!-- tittle part  -->
+                                                <div class=" ">
+                                                        <h4 class="text-gray-950 text-[11px] line-clamp-1">{{order.title}}</h4>
+                                                        <div class="px-1 border w-max border-[#EE4D2D] text-[8px] text-[#EE4D2D] capitalize">15 days free return*</div>
+                                                </div>
+                                        </div>
+
+                                </div>
+                                
+                                <div class="col-span-1 text-left flex items-center">
+                                        <h4 class="text-[11px] text-gray-800 pl-3">Qty <span class="px-1">:</span> <span>{{order.quantity}}</span></h4>
+                                </div>
+                                
+                                <div class="col-span-1 flex flex-row items-center justify-end">
+                                        <h4 class="text-gray-950  capitalize text-[11px] text-right">{{orders.createdOn}}</h4>
+                                </div>
+                                <div class="col-span-1 flex flex-row items-center justify-end">
+                                        <h4 class="text-gray-950  capitalize text-[11px] text-right">{{order.productId}}</h4>
+                                </div>
+                                <div class="col-span-1 flex flex-row items-center justify-end">
+                                        <h4 class="text-gray-950  capitalize text-[11px] text-right">{{order.orderPrice}}</h4>
+                                </div>
+                                <div class="col-span-2 grid grid-cols-2 items-center justify-between">
+
+                                        <div class="col-span-1 flex items-center justify-end w-full">
+                                        <h4 class="text-green-600 bg-green-100 font-semibold rounded-lg w-max text-right capitalize text-[9px] px-1 py-0.5">{{orders.orderStatus}}</h4>
+
+                                        </div>
+                                        <div class="col-span-1 flex items-center justify-end">
+                                        <h4 class="text-gray-950 text-right capitalize text-[11px]">{{orders.itemsTotalPrice}}</h4>
+
+                                        </div>
+                                </div>
+                                <div class="col-span-2 flex items-center justify-end">
+                                        <div class="flex flex-row justify-end space-x-3 items-end">
+                                                <!-- <button class="px-2 text-green-600 text-[10px] border border-green-500 font-normal">
+                                                        Confirm
+                                                </button>
+                                                <button class="px-2 text-red-600 text-[10px] border border-red-500 font-normal">
+                                                        Cancel
+                                                </button> -->
+                                                <button class="disabled: text-green-500 disabled:bg-gray-100 border rounded px-3 py-[2px] text-[10px] capitalize font-semibold" (click)="changeToProcessing()" [disabled] = "statusCondition == false">Request</button>    
+                                    <button class="disabled: text-red-500 disabled:bg-gray-100 border rounded px-3 py-[2px] text-[10px] capitalize font-semibold" (click)="changeToCancel()" [disabled] = "statusCondition == false">Cancel</button> 
+                                        </div>
+                                </div>
+                                <div class="col-span-1 flex items-center justify-end">
+                                        <div class="flex flex-row justify-end space-x-3 items-end">
+                                                <!-- <button class="px-3 text-green-600 text-[10px] border border-green-400 font-normal">
+                                                        Edit
+                                                </button> -->
+                                                <button class="px-3 text-red-600 text-[10px] border border-red-400 font-normal" (click)="deleteItems()">
+                                                        Delete
+                                                </button>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- items  -->
+
+
+                } @empty{
+                        <p class="text-center font-medium text-sm text-gray-800">The Order List Is Empty</p>
+                  }
+                                </div>
+                          <!-- main product items part end  -->                                        
+
+                          } 
+                         
+                
+
+
+                        <!-- shop voucher start -->
+                        <div class="py-5  border-y-2 border-dotted grid grid-cols-2 px-5 bg-white">
+                                <div class="col-span-1"></div>
+                                <div class="col-span-1 flex flex-row justify-between items-center">
+                                        <div class="">
+                                                
+                                                <h4 class="text-[11px] capitalize text-gray-600">shop voucher</h4>
+                                        </div>
+                                        <div class="">
+                                                <h4 class="text-[11px] capitalize text-[#3477BB] font-medium">Change voucher</h4>
+                                        </div>
+                                </div>
+                        </div>
+                        <!-- shop voucher end -->
+
+                        <!-- message for seller part start  -->
+                         <div class="bg-[#FAFDFF] border-b border-b-gray-300">
+                                <div class="grid grid-cols-7  border-b-2 border-dotted ">
+                                        <div class="w-full col-span-3 border-r-2 border-dotted pr-5 inline-grid grid-cols-1 grid-rows-2 py-3 px-5">
+                                                <div class="w-full inline-grid grid-cols-3 justify-start items-center">
+                                                        <h4 class="col-span-1 text-gray-950 text-[12px] font-normal w-max ">Message for seller :</h4>
+                                                        <input class="col-span-2 pl-2 py-2 text-left text-xs w-full  border hover:shadow-inner outline-none placeholder:text-gray-300" placeholder="Please leave a message" p type="text" >
+                                                </div>
+                                                <div class=""></div>
+                                        </div>
+
+                                        <div class="col-span-4 inline-grid grid-cols-4 justify-start items-start py-3 px-4">
+                                                <div class="col-span-1 text-left">
+                                                        <h4 class="text-gray-950 text-xs">Shipping option :</h4>
+                                                </div>
+                                                <div class="col-span-3">
+                                                        <div class="flex flex-row justify-between items-start">
+                                                                <h4 class="text-[11px] text-gray-950">Standard delivery</h4>
+                                                                <button class="text-[11px] capitalize text-[#3477BB] font-medium">Change</button>
+                                                                <div class="pl-3 text-right">
+                                                                        <div class="flex flex-row items-center">
+                                                                                <del class="text-gray-300 text-[10px] font-normal">TK.48</del>
+                                                                                <h4 class="text-gray-950 text-[10px] pl-2 font-normal">{{orders.shippingFee}}</h4>
+                                                                        </div>
+                                                                        <h4 class="text-gray-600 text-[10px]">(incl.SST)</h4>
+                                                                </div>
+                                                                
+                                                        </div>
+                                                        <div class="py- w-full">
+                                                                <h4 class="text-[#39B1A2] text-[10px] font-normal">
+                                                                        Guaranteed to get by <span class="font-medium">{{orders.expectedShippingDate}}</span>
+                                                                </h4>
+                                                                <h4 class="-pr-5 text-[#39B1A2] text-[10px] font-normal line-clamp-2 w-80">
+                                                                        Get a RM5.00 voucher if no delivery was attempted by <span class="font-medium">{{orders.expectedShippingDate}}</span>.
+                                                                </h4>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="p-5 capitalize flex flex-row items-center justify-end">
+                                        <h4 class="text-gray-600 text-[11px]">Order subtotal <span class="">(2 items)</span></h4>
+                                        <h4 class="text-base pl-6 text-[#EE5536] font-medium">{{orders.grandTotalPayable}}</h4>
+                                </div>
+                         </div>
+                        <!-- message for seller part end  -->
+
+                  </div>
+
+                  <!-- voucher part  -->
+                   <div class="p-5 my-3 bg-white">
+                        <div class="grid grid-cols-2">
+                                <div class="col-span-1 flex flex-row">
+                                        <div class="">
+                                        </div>
+                                        <div class="text-sm text-gray-950 capitalize">Voucher / Discount</div>
+                                </div>
+                                <div class="col-span-1 flex flex-row items-center justify-end">
+                                        <div class="text-[10px] capitalize text-gray-500"><span class="text-red-600 ">1
+
+                                        </span> Selected 
+                                        <!-- <span class="text-[#6AD9CA] border border-y-[#6AD9CA] ml-2 ">free shipping discount</span> -->
+                                        
+                                        </div>
+                                        <div class="ml-10 text-[11px] capitalize text-[#3477BB] font-medium">change</div>
+                                        <!-- <div class="ml-10 text-[12px] capitalize text-[#3477BB] font-medium">{{orders.shippingFee}}</div> -->
+                                </div>
+                        </div>
+                   </div>
+                  <!-- voucher part  -->
+
+                  <!-- total amount part  -->
+                  <div class="p-5 my-3 bg-white">
+                        <div class="grid grid-cols-2">
+                                <div class="col-span-1 flex flex-row">
+                                        <div class="">
+                                        </div>
+                                        <div class="text-sm text-gray-950 capitalize">Totall Amount</div>
+                                </div>
+                                <div class="col-span-1 flex flex-row items-center justify-end">
+                                        <h4 class="text-gray-600 text-[11px]">Orders total <span class="">(2 items)</span></h4>
+                                        <h4 class="text-base pl-6 text-[#EE5536] font-medium">{{orders.grandTotalPayable}}</h4>
+                                </div>
+                        </div>
+                   </div>
+                  <!-- Total amount part  -->
+
+                  <!-- voucher part  -->
+                  <div class="p-5 my-3 bg-white">
+                        <div class="grid grid-cols-2 pb-5">
+                                <div class="col-span-1 flex flex-row">
+                                        <div class="">
+                                        </div>
+                                        <div class="text-sm text-gray-950 capitalize">Payment Option</div>
+                                </div>
+                                <div class="col-span-1 flex flex-row items-end justify-end">
+                                        <div class="flex flex-col gap-y-3 justify-end items-end">
+                                        <div class="grid grid-cols-2">
+                                                <div class="cols-span-1 flex flex-col justify-end items-end">
+                                                        <div class="text-xs text-gray-700 capitalize">Payment Status :</div>
+                                                        <div class="text-xs text-gray-700 capitalize">Payment Method :</div>
+                                                </div>
+                                                <div class="col-span-1 flex flex-col justify-end items-end">
+                                                        <div class="ml-10 text-[11px] capitalize text-red-600 font-medium">{{orders.paymentStatus}}</div>
+
+                                                        <div class="ml-10 text-[11px] capitalize text-[#3477BB] font-medium">{{orders.paymentMethod}}</div>
+                                                </div>
+                                        </div>
+                                        
+                                        </div>
+                                        <!-- <div class="ml-10 text-[12px] capitalize text-[#3477BB] font-medium">{{orders.shippingFee}}</div> -->
+                                </div>
+                        </div>
+                        <!-- update part  -->
+                  <div class="pt-5 bg-white border-t-2 border-dotted">
+                        <div class="grid grid-cols-2">
+                                <div class="col-span-1 flex flex-row">
+                                        <div class="">
+                                        </div>
+                                        <div class="text-sm text-gray-950 capitalize">Updated Status</div>
+                                </div>
+                                <div class="col-span-1 flex flex-row items-center space-x-5 justify-end">
+                                        <div class="cols-span-1 flex flex-col justify-start items-start">
+                                                <div class="text-xs text-gray-700 capitalize">Updated By   :</div>
+                                                <div class="text-xs text-gray-700 capitalize">Confirmed By :</div>
+                                        </div>
+                                        <div class="cols-span-1 flex flex-col justify-end items-end">
+                                                <div class="text-xs text-gray-700 capitalize">Admin</div>
+                                                <div class="text-xs text-gray-700 capitalize">Admin</div>
+                                        </div>
+                                </div>
+                        </div>
+                   </div>
+                  <!-- update part  -->
+                   </div>
+                  <!-- voucher part  -->
+
+                  
+
+                  <!-- confirm  part  -->
+                  <div class="p-5 my-3 bg-white">
+                        <div class="grid grid-cols-2 items-center">
+                                <div class="col-span-1 flex flex-row">
+                                        
+                                        <div class="text-sm text-gray-950 capitalize">Totall Amount (<span class="text-xs text-[#EE5536] font-medium">RM.22.48</span>)</div>
+                                </div>
+                                <div class="col-span-1 flex flex-row space-x-10 items-center justify-end w-full">
+                                        <button class="px-6 py-2 rounded bg-blue-600 hover:bg-blue-500 text-sm text-white font-normal">
+                                                Proceed to Pay
+                                        </button>
+                                        <button class="px-6 py-2 rounded bg-[#EE5536] hover:bg-[#ff5a39] text-sm text-white font-normal">
+                                                Cancell Order
+                                        </button>
+                                </div>
+                        </div>
+                   </div>
+                  <!-- Confirem part  -->
+
+                  <!-- <div class="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-5 justify-center items-center w-full">
+                        <div class="h-36 w-36 rounded bg-slate-800 ">1</div>
+                        <div class="h-36 w-36 rounded bg-slate-800">2</div>
+                        <div class="h-36 w-36 rounded bg-slate-800">3</div>
+                        <div class="h-36 w-36 rounded bg-slate-800">4</div>
+
+                  </div> -->
+                  <!-- <div class="">
+                        <div class="grid grid-cols-3 justify-items-stretch w-full pt-5 md:gap-5">
+                                <div class="h-36 w-36 rounded bg-slate-800 justify-self-end flex items-center justify-center text-center">5</div>
+                                <div class="h-36 w-36 rounded bg-slate-800 justify-self-center">6</div>
+                                <div class="h-36 w-36 rounded bg-slate-800 justify-self-start">7</div>
+                        </div>
+                  </div> -->
+
+
+
+                  
+
+
+        </div>
+
+
+         
+</body>
+</html>

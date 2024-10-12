@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+</head>
+<body class="font-serif">
+    <div class="container mx-auto my-10">
+        <div class="grid grid-cols-3 gap-x-20">
+            <!-- left side  -->
+            <div class="col-span-2 w-full">
+                <div class="text-gray-800 text-sm text-left">Payment Method</div>
+                <div class="border border-green-600 p-2 rounded bg-white mt-4">
+                    <div class="w-full flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="h-[18px] w-[18px] bg-white border-2 border-green-600 rounded-full flex items-center justify-center">
+                                <div class="h-[10px] w-[10px] rounded-full bg-green-600"></div>
+                            </div>
+                            <div class="text-gray-600 text-sm font-medium">Credit or Debit Card</div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-gray-500">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                          </svg>
+                    </div>
+                    <div class="mt-3">
+                        <form action="">
+                            <!-- card name  -->
+                            <div class="w-full mt-5">
+                                <h4 class="text-gray-400 text-[11px]">Name On Card</h4>
+                                <!-- <input type="text"> -->
+                                 <div class="px-2 py-1 border rounded text-gray-600 w-full text-xs mt-1">
+                                    Md.Rabiul Islam
+                                 </div>
+                            </div>
+                            <!-- card number  -->
+                            <div class="w-full mt-5">
+                                <h4 class="text-gray-400 text-[11px]">Card number</h4>
+                                <!-- <input type="text"> -->
+                                 <div class="px-2 py-1 border rounded text-gray-600 w-full text-xs mt-1">
+                                    8857 5448 4557 9425
+                                 </div>
+                            </div>
+                            <!-- Date and cvd/ ccc  -->
+                             <div class="flex items-center w-full space-x-5 mt-5">
+                                <!-- expire date  -->
+                                <div class="w-full">
+                                    <h4 class="text-gray-400 text-[11px]">Expire Date</h4>
+                                    <!-- <input type="text"> -->
+                                     <div class="px-2 py-1 border rounded text-gray-600 w-full text-xs mt-1">
+                                        29/6/2024
+                                     </div>
+                                </div>
+                                <!-- cvc/cvv  -->
+                                <div class="w-full">
+                                    <h4 class="text-gray-400 text-[11px]">CVC/CVV</h4>
+                                    <!-- <input type="text"> -->
+                                     <div class="px-2 py-1 border rounded text-gray-600 w-full text-xs mt-1">
+                                        576
+                                     </div>
+                                </div>
+                             </div>
+                        </form>
+                    </div>
+
+                    <div class="mt-5">
+                        <div class="flex items-center justify-start">
+                            <div class="p-[0px] bg-green-600 flex items-center justify-center rounded cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3 text-white">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                  </svg>
+                            </div>
+                            <h4 class="text-gray-600 text-[11px] font-medium pl-2">Save this card</h4>
+                        </div>
+                    </div>
+                    <div class="flex items-ceneter space-x-5 mt-5 ">
+                        <div class="px-4 flex items-center cursor-pointer justify-center py-2 rounded-md text-[11px] text-gray-600 border">Cancel</div>
+                        <div class="px-5 flex items-center cursor-pointer justify-center py-2 rounded-md text-[11px] bg-green-600 text-white">Use This Card</div>
+                    </div>
+                </div>
+                <!-- Payment Method  -->
+                <div class="mt-5 px-3 py-3 border rounded bg-white">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="h-4 w-4 rounded-full border"></div>
+                            <div class="text-gray-600 text-[11px]">Paypal</div>
+                        </div>
+                        <div class="w-16"><img class="w-full" src="assets/images/paypal.png" alt=""></div>
+
+                    </div>
+                </div>
+
+                <div class="mt-5 px-3 py-2 border rounded bg-white">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="h-4 w-4 rounded-full border"></div>
+                            <div class="text-gray-600 text-[11px]">Google Pay</div>
+                        </div>
+                        <div class="w-12"><img class="w-full" src="assets/images/Google.png" alt=""></div>
+
+                    </div>
+                </div>
+
+                <div class="mt-5 px-3 py-2 border rounded bg-white">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <div class="h-4 w-4 rounded-full border"></div>
+                            <div class="text-gray-600 text-[11px]">Apple Pay</div>
+                        </div>
+                        <div class="w-12"><img class="w-full" src="assets/images/Apple1.png" alt=""></div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- left side  -->
+            <div class="col-span-1 bg-white w-full p-3 rounded-lg border">
+                <div class="w-full text-gray-500 text-[11px] flex items-center justify-center py-2 rounded-lg bg-[#F5F7FA]">Order Summery</div>
+                <div class="flex flex-col items-center mt-5 w-full space-y-3 pb-5 border-b ">
+                    <div class="flex items-center justify-between w-full">
+                         <div class="flex items-center justify-start space-x-2">
+                            <div class="border rounded-lg w-12 h-12 flex items-center justify-center">
+                                <img class="h-10 w-10" src="assets/images/head.png" alt="">
+                            </div>
+                            <div class="">
+                                <h4 class="text-gray-500 text-[10px]">Gaming Headphone</h4>
+                                <h4 class="text-gray-400 text-[9px]">Glacical grey</h4>
+                            </div>
+                         </div>
+                         <div class="text-gray-500 text-[10px]">Tk570.00</div>
+                    </div>
+                    <div class="flex items-center justify-between w-full">
+                        <div class="flex items-center justify-start space-x-2">
+                           <div class="border rounded-lg w-12 h-12 flex items-center justify-center">
+                               <img class="h-10 w-10" src="assets/images/Mobile1.png" alt="">
+                           </div>
+                           <div class="">
+                               <h4 class="text-gray-500 text-[10px]">T-Mobile Splis Galaxy z flip</h4>
+                               <h4 class="text-gray-400 text-[9px]">sSpace gray</h4>
+                           </div>
+                        </div>
+                        <div class="text-gray-500 text-[10px]">Tk58470.00</div>
+                   </div>
+                   <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center justify-start space-x-2">
+                       <div class="border rounded-lg w-12 h-12 flex items-center justify-center">
+                           <img class="h-10 w-10" src="assets/images/head.png" alt="">
+                       </div>
+                       <div class="">
+                           <h4 class="text-gray-500 text-[10px]">Gaming Headphone</h4>
+                           <h4 class="text-gray-400 text-[9px]">Glacical grey</h4>
+                       </div>
+                    </div>
+                    <div class="text-gray-500 text-[10px]">Tk570.00</div>
+               </div>
+               <div class="flex items-center justify-between w-full">
+                   <div class="flex items-center justify-start space-x-2">
+                      <div class="border rounded-lg w-12 h-12 flex items-center justify-center">
+                          <img class="h-10 w-10" src="assets/images/Mobile1.png" alt="">
+                      </div>
+                      <div class="">
+                          <h4 class="text-gray-500 text-[10px]">T-Mobile Splis Galaxy z flip</h4>
+                          <h4 class="text-gray-400 text-[9px]">Space gray</h4>
+                      </div>
+                   </div>
+                   <div class="text-gray-500 text-[10px]">Tk58470.00</div>
+              </div>
+              <div class="flex items-center justify-between w-full">
+                <div class="flex items-center justify-start space-x-2">
+                   <div class="border rounded-lg w-12 h-12 flex items-center justify-center">
+                       <img class="h-10 w-10" src="assets/images/Mobile1.png" alt="">
+                   </div>
+                   <div class="">
+                       <h4 class="text-gray-500 text-[10px]">T-Mobile Splis Galaxy z flip</h4>
+                       <h4 class="text-gray-400 text-[9px]">Space gray</h4>
+                   </div>
+                </div>
+                <div class="text-gray-500 text-[10px]">Tk58470.00</div>
+           </div>
+                </div>
+                <div class="flex flex-col space-y-1 text-[10px] mt-3 pb-3 border-b">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-gray-500">Item's(5):</h4>
+                        <h4 class="text-gray-500">tk.1580</h4>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-gray-500">Shipping & Handling:</h4>
+                        <h4 class="text-gray-500">tk.180</h4>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-gray-500">Before Tax:</h4>
+                        <h4 class="text-gray-500">tk.1050</h4>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-gray-500">Tax Collected(20%):</h4>
+                        <h4 class="text-gray-500">tk.35310</h4>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between text-[10px] pt-1">
+                    <h4 class="text-gray-500">Order Total</h4>
+                    <h4 class="text-gray-500">Tk.211810.00</h4>
+                </div>
+                <div class="flex items-center justify-center mt-3">
+                    <div class="px-5 py-2 text-white bg-green-600 text-[10px] text-center rounded-md">Order Placed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
