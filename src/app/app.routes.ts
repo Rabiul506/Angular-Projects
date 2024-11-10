@@ -10,10 +10,19 @@ import { RawaCopyComponent } from './rawa-copy/rawa-copy.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { SignUpComponent } from './logSign/sign-up/sign-up.component';
+import { LoginComponent } from './logSign/login/login.component';
+import { LocalCrudComponent } from './local-crud/local-crud.component';
 
 
 
 export const routes: Routes = [
+    {
+        path: 'signUP', component:SignUpComponent
+    },
+    {
+        path: 'login', component:LoginComponent
+    },
     {'path': '', component:HomeComponent},
     {'path': 'checkout-page', component:CheckoutPageComponent},
     {'path': 'menubar', component:MenubarComponent},
@@ -24,5 +33,6 @@ export const routes: Routes = [
     {'path': 'rawa-copy', component:RawaCopyComponent},
     {'path': 'order-page', component:OrderPageComponent},
     {'path': 'payment-page', component:PaymentPageComponent},
-    {path: 'product-detail', component:ProductDetailComponent}
+    {path: 'product-detail', component:ProductDetailComponent},
+    {path: 'local', component:LocalCrudComponent},
 ];

@@ -1,0 +1,21 @@
+<p>local-crud works!</p>
+<div class="max-w-lg mx-auto p-4 bg-white shadow-lg rounded-lg mt-10">
+    <h2 class="text-2xl font-bold mb-4 text-center">Angular 18 Standalone Local Storage CRUD</h2>
+    
+    <div class="space-y-4">
+      <button (click)="createItem()" class="w-full py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+        Create Item
+      </button>
+      <button (click)="readItem()" class="w-full py-2 bg-green-500 text-white rounded hover:bg-green-600">
+        Read Item
+      </button>
+      <button (click)="updateItem()" class="w-full py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600">
+        Update Item
+      </button>
+      <button (click)="deleteItem()" class="w-full py-2 bg-red-500 text-white rounded hover:bg-red-600">
+        Delete Item
+      </button>
+    </div>
+    
+    <p class="mt-4 p-2 border border-gray-300 rounded bg-gray-100">{{ output }}</p>
+  </div>

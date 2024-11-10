@@ -1,3 +1,4 @@
+import { SignUpComponent } from './logSign/sign-up/sign-up.component';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CheckoutPageComponent } from './checkout-page/checkout-page.component';
@@ -11,6 +12,8 @@ import { RawaCopyComponent } from './rawa-copy/rawa-copy.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { LoginComponent } from './logSign/login/login.component';
+import { LocalCrudComponent } from './local-crud/local-crud.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +26,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     }
   `,
   standalone: true,
-  imports: [RouterOutlet, HomeComponent,ProductDetailComponent, CheckoutPageComponent, MenubarComponent,NewDesignComponent,FisherResidenceComponent, ProductModelOneComponent,RawaLandingPageComponent, RawaCopyComponent,OrderPageComponent,PaymentPageComponent],
+  imports: [RouterOutlet,SignUpComponent,LoginComponent,HomeComponent,LocalCrudComponent,ProductDetailComponent, CheckoutPageComponent, MenubarComponent,NewDesignComponent,FisherResidenceComponent, ProductModelOneComponent,RawaLandingPageComponent, RawaCopyComponent,OrderPageComponent,PaymentPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
