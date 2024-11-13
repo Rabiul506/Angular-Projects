@@ -1,17 +1,27 @@
-import { Component } from '@angular/core';
-import { LocalService } from '../local.service';
+import { LocalService } from './../local.service';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-local-crud',
   standalone: true,
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './local-crud.component.html',
   styleUrl: './local-crud.component.scss'
 })
-export class LocalCrudComponent {
+export class LocalCrudComponent implements OnInit{
   output: string = '';
+  itemForm: FormGroup;
+  name!: string;
 
-  constructor(private ls: LocalService) {}
+  constructor(
+    private fb: FormBuilder,
+    private ls: LocalService) {
+      this.itemForm = this.fb.group({
+        name: [''],
+        description: ['']
+      });
+    }
 
   createItem() {
     this.ls.setItem('exampleKey', { name: 'Angular', version: '18' });
@@ -33,5 +43,28 @@ export class LocalCrudComponent {
   deleteItem() {
     this.ls.removeItem('exampleKey');
     this.output = 'Item deleted!';
+  }
+
+  existingArray: any [] = [];
+
+// Form 
+
+onSubmit() {
+    if (this.itemForm.valid) {
+      const formData = this.itemForm.value;
+      this.ls.addItemToArray('itemsArray', formData);
+      this.existingArray.push(formData)
+      this.itemForm.reset();
+    }
+    console.log(this.itemForm.value);
+    
+  }
+
+  onRemoveItem(name: string) {
+    this.ls.removeItemFromArray('itemsArray', name, '');
+  }
+
+  ngOnInit(): void {
+      this.existingArray
   }
 }

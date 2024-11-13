@@ -31,4 +31,39 @@ export class LocalService {
   clear(): void {
     localStorage.clear();
   }
+
+
+  
+  // Add an item to an existing array in localStorage
+  addItemToArray(key: string, newItem: any): void {
+    const existingDataString = localStorage.getItem(key);
+    let existingArray: any[] = existingDataString ? JSON.parse(existingDataString) : [];
+
+    if (!Array.isArray(existingArray)) {
+      existingArray = [];
+    }
+
+    existingArray.push(newItem);
+    localStorage.setItem(key, JSON.stringify(existingArray));
+    console.log('Item added successfully:', existingArray);
+  }
+
+  // Remove an item from an array in localStorage by a unique identifier
+  removeItemFromArray(key: string, itemId: any, identifier: string): void {
+    const existingDataString = localStorage.getItem(key);
+    if (existingDataString) {
+      let existingArray = JSON.parse(existingDataString);
+
+      if (Array.isArray(existingArray)) {
+        // Filter out the item with the specified identifier
+        existingArray = existingArray.filter(item => item[identifier] !== itemId);
+        
+        localStorage.setItem(key, JSON.stringify(existingArray));
+        console.log('Item removed successfully:', existingArray);
+      }
+    }
+  }
+
+
+  
 }

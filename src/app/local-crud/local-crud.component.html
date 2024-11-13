@@ -19,3 +19,27 @@
     
     <p class="mt-4 p-2 border border-gray-300 rounded bg-gray-100">{{ output }}</p>
   </div>
+
+  <div class="flex items-center justify-start gap-x-5">
+
+    @for(item of existingArray; track item; let i = $index){
+      <div class="w-96 border rounded-lg p-3 flex justify-between flex-row">
+        <div class="flex flex-col">
+          <span class="py-5">name:  {{item.name}}</span>
+        <span class="py-5">description: {{item.description}}</span>
+        </div>
+        <button (click)="onRemoveItem(name)" class="bg-red-500 text-white py-2 px-4 rounded">Remove Item with ID 3</button>
+   
+      </div>
+    }
+  </div>
+
+ <div class="mt-10">
+  <form [formGroup]="itemForm" (ngSubmit)="onSubmit()" class="space-y-4">
+    <input formControlName="name" placeholder="Item Name" class="border p-2 w-96" />
+    <input formControlName="description" placeholder="Description" class="border p-2 w-96" />
+    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Add Item</button>
+  </form>
+
+
+ </div>
