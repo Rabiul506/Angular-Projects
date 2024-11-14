@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { SignUpComponent } from './logSign/sign-up/sign-up.component';
 import { LoginComponent } from './logSign/login/login.component';
 import { LocalCrudComponent } from './local-crud/local-crud.component';
+import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { TabContainerComponent } from './components/tab-container/tab-container.component';
 
 
 
@@ -35,4 +37,6 @@ export const routes: Routes = [
     {'path': 'payment-page', component:PaymentPageComponent},
     {path: 'product-detail', component:ProductDetailComponent},
     {path: 'local', component:LocalCrudComponent},
+    {path: 'life', component:LifeCycleComponent},
+    {path: 'tab', component:TabContainerComponent},
 ];

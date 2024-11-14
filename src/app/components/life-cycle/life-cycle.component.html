@@ -1,0 +1,23 @@
+<div class="">
+    <div *ngIf="user">
+        <h2>{{ user.name }}</h2>
+        <p>{{ user.email }}</p>
+    </div>
+</div>
+
+
+    <ng-template #customTabButtons>
+        <div class="custom-class">
+            
+        <button class="tab-button" 
+                (click)="login()">{{loginText}}
+        </button>
+        <button class="tab-button" 
+                (click)="signUp()">{{signUpText}}
+        </button>
+    </div>
+
+    </ng-template>
+
+    <!-- <tab-container [headerTemplate]="customTabButtons"></tab-container>  -->
+     <app-tab-container [headerTemplate]="customTabButtons"></app-tab-container>

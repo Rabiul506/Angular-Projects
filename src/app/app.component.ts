@@ -14,6 +14,8 @@ import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { LoginComponent } from './logSign/login/login.component';
 import { LocalCrudComponent } from './local-crud/local-crud.component';
+import { LifeCycleComponent } from './components/life-cycle/life-cycle.component';
+import { TabContainerComponent } from './components/tab-container/tab-container.component';
 
 @Component({
   selector: 'app-root',
@@ -26,7 +28,7 @@ import { LocalCrudComponent } from './local-crud/local-crud.component';
     }
   `,
   standalone: true,
-  imports: [RouterOutlet,SignUpComponent,LoginComponent,HomeComponent,LocalCrudComponent,ProductDetailComponent, CheckoutPageComponent, MenubarComponent,NewDesignComponent,FisherResidenceComponent, ProductModelOneComponent,RawaLandingPageComponent, RawaCopyComponent,OrderPageComponent,PaymentPageComponent],
+  imports: [RouterOutlet,SignUpComponent,LoginComponent,HomeComponent,LocalCrudComponent, LifeCycleComponent,TabContainerComponent,ProductDetailComponent, CheckoutPageComponent, MenubarComponent,NewDesignComponent,FisherResidenceComponent, ProductModelOneComponent,RawaLandingPageComponent, RawaCopyComponent,OrderPageComponent,PaymentPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
